@@ -3,7 +3,7 @@
 }
 
 body {
-    margin: 0;
+    margin: 300px;
     display: grid;
     grid-template-columns: repeat(2, 8rem);
     grid-template-rows: 14rem 2rem 14rem;
@@ -11,12 +11,13 @@ body {
     cursor: pointer;
     justify-content: center;
     padding-top: 1rem;
+    background-color: black;
 }
 
 .deck {
     height: 100%;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid yellowgreen;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,11 +28,11 @@ body {
 }
 
 .computer-deck {
-    background-color: yellowgreen;
+    background-color: black;
 }
 
 .player-deck {
-    background-color: blue;
+    background-color: yellowgreen;
 }
 
 .text {
@@ -39,13 +40,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
 }
 
 .card {
     position: relative;
     height: 100%;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid yellowgreen;
     border-radius: .4rem;
     display: flex;
     justify-content: center;
@@ -54,11 +56,11 @@ body {
 }
 
 .card.red {
-    color:red;
+    color:white;
 }
 
 .card.black {
-    color: black;
+    color: white;
 }
 
 .card::before,
@@ -78,3 +80,9 @@ body {
     right: .5rem;
     transform: rotate(180deg);
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+      margin: 40%;
+    }
+  }
