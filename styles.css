@@ -3,14 +3,14 @@
 }
 
 body {
-    margin: 300px;
+    margin: 150px;
     display: grid;
-    grid-template-columns: repeat(2, 8rem);
-    grid-template-rows: 14rem 2rem 14rem;
-    gap: .5rem;
+    grid-template-columns: repeat(2, 11rem);
+    grid-template-rows: 6rem 17rem 2rem 17rem 6rem;
+    gap: 1rem;
     cursor: pointer;
     justify-content: center;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     background-color: black;
 }
 
@@ -32,9 +32,20 @@ body {
 }
 
 .player-deck {
-    background-color: yellowgreen;
+    background-color: black;
 }
 
+h1 {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 100;
+    font-kerning: auto;
+    letter-spacing: 13px;
+    font-size: 2rem;
+}
 .text {
     grid-column: span 2;
     display: flex;
@@ -83,6 +94,6 @@ body {
 
 @media only screen and (max-width: 600px) {
     body {
-      margin: 40%;
+      margin: 20%;
     }
   }
