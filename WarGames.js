@@ -193,3 +193,8 @@ function isRoundWinner(cardOne, cardTwo) {
 function isGameOver(deck){
     return deck.numberOfCards === 0
 }
+
+function testLog(){
+    console.log('the game is running');
+}
+
