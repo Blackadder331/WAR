@@ -52,20 +52,25 @@ class Card {
     getHTML() {
         const cardDiv = document.createElement("div")
         //cardDiv.innerText = this.suit
-        cardDiv.innerHTML = `<img src="FRAME_ORC.png" style ='width:120px'>`;
+        //cardDiv.innerHTML = `<img src="FRAME_ORC.png" style ='width:120px'>`; // single image
         cardDiv.classList.add("card", this.color)
         cardDiv.dataset.value = `${this.value} ${this.suit}`
+        if (this.suit === "Orcs") {
+                cardDiv.innerHTML = `<img src="FRAME_ORC.png" style ='width:120px'>`;
+            } else if (this.suit === "Gnolls") {
+                cardDiv.innerHTML = `<img src="FRAME_GNOLL.png" style ='width:120px'>`;
+            } else if (this.suit === "Dwarves") {
+                cardDiv.innerHTML = `<img src="FRAME_DWARF.png" style ='width:120px'>`;
+            } else {
+                cardDiv.innerHTML = `<img src="FRAME_ELF.png" style ='width:120px'>`;  
+            }
         return cardDiv
 
     }
 }
 
 // How to load multiple images? 
-// if (this.suit === "♣") {
-//     cardDiv.innerHTML = `<img src="FRAME_ORC.png" style ='width:120px'>`;
-// } else {
-//     cardDiv.innerHTML = `<img src="FRAME_ELF.png" style ='width:120px'>`;  
-// }
+
 
 function freshDeck() {
     // flatMap returns a single flat array, rendering one of each card
