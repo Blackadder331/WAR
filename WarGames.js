@@ -2,9 +2,14 @@
 // A card game played in the browser driven by user clicks
 
 //const SUITS = ["diamonds", "clubs", "hearts", "spades"]
-const SUITS = ["♦", "♣", "♥", "♠"]
-// const SUITS = ["Orcs", "Gnolls", "Dwarves", "Elves"]
+//const SUITS = ["♦", "♣", "♥", "♠"]
+const SUITS = ["Orcs", "Gnolls", "Dwarves", "Elves"]
 const VALUES = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+//const VALUES = ["A", "LVL 2", "LVL 3", "LVL 4", "LVL 5", "LVL 6", "LVL 7", "LVL 8", "LVL 9", "LVL 10", "LVL J", "LVL Q", "LVL K"]
+
+
+// images need to replace suits next
+
 
 class Deck {
     constructor(cards = freshDeck()) {
@@ -33,7 +38,7 @@ class Deck {
         }
     }
 }
-
+ 
 class Card {
     constructor(suit, value) {
         this.suit = suit
@@ -46,12 +51,21 @@ class Card {
 
     getHTML() {
         const cardDiv = document.createElement("div")
-        cardDiv.innerText = this.suit
+        //cardDiv.innerText = this.suit
+        cardDiv.innerHTML = `<img src="FRAME_ORC.png" style ='width:120px'>`;
         cardDiv.classList.add("card", this.color)
         cardDiv.dataset.value = `${this.value} ${this.suit}`
         return cardDiv
+
     }
 }
+
+// How to load multiple images? 
+// if (this.suit === "♣") {
+//     cardDiv.innerHTML = `<img src="FRAME_ORC.png" style ='width:120px'>`;
+// } else {
+//     cardDiv.innerHTML = `<img src="FRAME_ELF.png" style ='width:120px'>`;  
+// }
 
 function freshDeck() {
     // flatMap returns a single flat array, rendering one of each card
@@ -139,24 +153,24 @@ function flipCards() {
     updateDeckCount()
 
     if (isRoundWinner(playerCard, computerCard)) {
-        text.innerText = 'Win'
+        text.innerText = 'You win the battle'
         playerDeck.push(playerCard)
         playerDeck.push(computerCard)
     } else if (isRoundWinner(computerCard, playerCard)) {
-        text.innerText = 'Lose'
+        text.innerText = 'You lose the battle'
         computerDeck.push(playerCard)
         computerDeck.push(computerCard)
     } else {
-        text.innerText = 'Draw'
+        text.innerText = 'Draw -- you are evenly matched'
         playerDeck.push(playerCard)
         computerDeck.push(computerCard)
     }
 
     if (isGameOver(playerDeck)) {
-        text.innerText = 'You LOSE!'
+        text.innerText = 'Your army LOST!'
         stop = true
     } else if (isGameOver(computerDeck)) {
-        text.innerText = 'You WIN!'
+        text.innerText = 'Your army WINS the WAR!'
         stop = true
     }
 }

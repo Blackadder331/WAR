@@ -1,5 +1,11 @@
 *, *::after, *::before {
     box-sizing: border-box;
+    font-family: 'Migra';
+}
+/*Font*/
+@font-face {
+    font-family: 'Migra';
+    src: local('Migra-Regular.ttf') format('truetype'), 
 }
 
 body {
@@ -43,8 +49,8 @@ h1 {
     color: #fff;
     font-weight: 100;
     font-kerning: auto;
-    letter-spacing: 13px;
-    font-size: 2rem;
+    letter-spacing: 17px;
+    font-size: 2.25rem;
 }
 .text {
     grid-column: span 2;
@@ -92,8 +98,44 @@ h1 {
     transform: rotate(180deg);
 }
 
+html {
+    border: 2px solid yellowgreen;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    overflow: auto;
+}
+
 @media only screen and (max-width: 600px) {
     body {
       margin: 20%;
+      grid-template-columns: repeat(2, 8rem);
+      grid-template-rows: 3rem 13rem 2rem 13rem 3rem;
+      gap: 1rem;
     }
-  }
+
+    html {
+        border: 1px solid yellowgreen;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+        overflow: auto;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-height: 900px) {
+    body {
+        margin: 5%;
+        grid-template-columns: repeat(2, 8rem);
+        grid-template-rows: 3rem 13rem 2rem 13rem 3rem;
+        gap: 1rem;
+      }
+}
