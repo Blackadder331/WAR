@@ -55,6 +55,7 @@ class Card {
         //cardDiv.innerHTML = `<img src="FRAME_ORC.png" style ='width:120px'>`; // single image
         cardDiv.classList.add("card", this.color)
         cardDiv.dataset.value = `${this.value} ${this.suit}`
+        // renders images for each suit (race) 
         if (this.suit === "Orcs") {
                 cardDiv.innerHTML = `<img src="FRAME_ORC.png" style ='width:120px'>`;
             } else if (this.suit === "Gnolls") {
@@ -69,7 +70,7 @@ class Card {
     }
 }
 
-// How to load multiple images? 
+
 
 
 function freshDeck() {

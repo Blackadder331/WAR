@@ -1,0 +1,24 @@
+{
+  "name": "week6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "WarGames.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blackadder331/WAR.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blackadder331/WAR/issues"
+  },
+  "homepage": "https://github.com/Blackadder331/WAR#readme",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
+}
