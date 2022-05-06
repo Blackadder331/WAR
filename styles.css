@@ -1,6 +1,7 @@
 *, *::after, *::before {
-    box-sizing: border-box;
     font-family: 'Migra';
+    padding: 0;
+    margin: 0;
 }
 /*Font*/
 @font-face {
@@ -9,15 +10,33 @@
 }
 
 body {
-    margin: 150px;
-    display: grid;
-    grid-template-columns: repeat(2, 11rem);
-    grid-template-rows: 6rem 17rem 2rem 17rem 6rem;
-    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     cursor: pointer;
     justify-content: center;
-    padding-top: 1.5rem;
-    background-color: black;
+}
+
+.play-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    height: 80vh;
 }
 
 .deck {
@@ -35,41 +54,59 @@ body {
 
 .computer-deck {
     background-color: black;
+    height: 180px;
+    width: 136px;
 }
 
 .player-deck {
     background-color: black;
+    height: 180px;
+    width: 136px;
 }
 
 h1 {
-    grid-column: span 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: #fff;
     font-weight: 100;
     font-kerning: auto;
     letter-spacing: 17px;
     font-size: 2.25rem;
 }
-.text {
-    grid-column: span 2;
+
+.cards {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 200px;
+    width: 100%
+}
+
+.text {
+    height: 1.5rem;
     color: #fff;
+    padding: .5rem;
+    animation-duration: 1s;
+    animation-name: fade;
 }
 
 .card {
-    position: relative;
-    height: 100%;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 180px;
+    width: 136px;
     border: 1px solid yellowgreen;
     border-radius: .4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 4rem;
+    animation-duration: 1s;
+    animation-name: fade;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
 }
 
 .card.red {
@@ -80,62 +117,41 @@ h1 {
     color: white;
 }
 
+.card-slot {
+    height: 182px;
+    padding-left: 1.5rem;
+}
+
 .card::before,
 .card::after {
-    position: absolute;
     content: attr(data-value);
     font-size: 1rem;
 }
 
 .card::before {
-    top: .5rem;
-    left: .5rem;
+    top: 1rem;
+    left: 1rem;
 }
 
 .card::after{
-    bottom: .5rem;
-    right: .5rem;
+    bottom: 1rem;
+    right: 1rem;
     transform: rotate(180deg);
 }
 
-html {
+/* html {
     border: 2px solid yellowgreen;
     position: absolute;
     top: 20px;
     right: 20px;
     bottom: 20px;
     left: 20px;
-    overflow: auto;
-}
+} */
 
-@media only screen and (max-width: 600px) {
-    body {
-      margin: 20%;
-      grid-template-columns: repeat(2, 8rem);
-      grid-template-rows: 3rem 13rem 2rem 13rem 3rem;
-      gap: 1rem;
-    }
+/* @media only screen and (max-width: 600px) {
 
-    html {
-        border: 1px solid yellowgreen;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        bottom: 10px;
-        left: 10px;
-        overflow: auto;
-    }
+} */
 
-    h1{
-        font-size: 1.5rem;
-    }
-}
-
-@media only screen and (max-height: 900px) {
-    body {
-        margin: 5%;
-        grid-template-columns: repeat(2, 8rem);
-        grid-template-rows: 3rem 13rem 2rem 13rem 3rem;
-        gap: 1rem;
-      }
-}
+/* @media only screen and (max-height: 900px) {
+    
+} */

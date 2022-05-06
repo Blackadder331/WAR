@@ -55,22 +55,21 @@ class Card {
         //cardDiv.innerHTML = `<img src="FRAME_ORC.png" style ='width:120px'>`; // single image
         cardDiv.classList.add("card", this.color)
         cardDiv.dataset.value = `${this.value} ${this.suit}`
-        // renders images for each suit (race) 
         if (this.suit === "Orcs") {
-                cardDiv.innerHTML = `<img src="FRAME_ORC.png" style ='width:120px'>`;
+                cardDiv.innerHTML = `<img src="FRAME_ORC.png" style ='width:80%; height:80%; margin:0 auto;'>`;
             } else if (this.suit === "Gnolls") {
-                cardDiv.innerHTML = `<img src="FRAME_GNOLL.png" style ='width:120px'>`;
+                cardDiv.innerHTML = `<img src="FRAME_GNOLL.png" style ='width:80%; height:80%; margin:0 auto;'>`;
             } else if (this.suit === "Dwarves") {
-                cardDiv.innerHTML = `<img src="FRAME_DWARF.png" style ='width:120px'>`;
+                cardDiv.innerHTML = `<img src="FRAME_DWARF.png" style ='width:80%; height:80%; margin:0 auto;'>`;
             } else {
-                cardDiv.innerHTML = `<img src="FRAME_ELF.png" style ='width:120px'>`;  
+                cardDiv.innerHTML = `<img src="FRAME_ELF.png" style ='width:80%; height:80%; margin:0 auto;'>`;  
             }
         return cardDiv
 
     }
 }
 
-
+// How to load multiple images? 
 
 
 function freshDeck() {
@@ -193,8 +192,3 @@ function isRoundWinner(cardOne, cardTwo) {
 function isGameOver(deck){
     return deck.numberOfCards === 0
 }
-
-function testLog(){
-    console.log('the game is running');
-}
-
